@@ -1,9 +1,10 @@
-import conectarBD from './db/db';
-import { UserModel } from './models/user';
-import { Enum_EstadoUsuario, Enum_Rol, Enum_TipoObjetivo } from './models/enums';
-import { ProjectModel } from './models/project';
-import { ObjectId } from 'mongoose';
-import { ObjectiveModel } from './models/objective';
+import conectarBD from './db/db.js';
+import { UserModel } from './models/user.js';
+// import { Enum_EstadoUsuario, Enum_Rol, Enum_TipoObjetivo } from './models/enums';
+import { ProjectModel } from './models/project.js';
+// import { ObjectId } from 'mongoose';
+import { ObjectiveModel } from './models/objective.js';
+//import { models } from 'mongoose';
 
 // METODOLOGÍA ONE TO MANY #1
 /* const crearProyectoConObjetivos1 = async () => {
@@ -133,61 +134,66 @@ const main = async () => {
 
 main();
 
-// CRUD USUARIOS
-
-// CREAR UN USUARIO
-// await UserModel.create({
-//   apellido: 'Saldarriaga',
-//   correo: 'lksk.dflcccc.com@',
-//   identificacion: '123456789',
-//   nombre: 'daniel',
-//   rol: Enum_Rol.administrador,
-// })
-//   .then((u) => {
+// const crearUsuario = async () =>{
+//   await UserModel.create({
+//       apellido: 'pérez',
+//       correo: 'pepitoperez@gmail.com',
+//       identificacion: '22222',
+//       nombre: 'pepito',
+//       rol: Enum_Rol.administrador,
+//     })
+//       .then((u) => {
 //     console.log('usuario creado', u);
 //   })
 //   .catch((e) => {
 //     console.error('Error creando el usuario', e);
 //   });
+// }
 
-// OBTENER LOS USUARIOS
-// await UserModel.find()
+// const obtenerUsuarios = async ()=>{
+//   await UserModel.find()
 //   .then((u) => {
 //     console.log('usuarios', u);
 //   })
 //   .catch((e) => {
 //     console.error('error obteniendo los usuarios', e);
 //   });
+// }
 
-// OBTENER UN SOLO USUARIO
-// await UserModel.findOne({ identificacion: '16546' })
+// const obtenerUnUsuario = async() =>{
+//   await UserModel.findOne({ identificacion: '22222' })
 //   .then((u) => {
 //     console.log('usuario encontrado', u);
 //   })
 //   .catch((e) => {
 //     console.error(e);
 //   });
+// }
 
-// EDITAR UN USUARIO
-// await UserModel.findOneAndUpdate(
-//   { correo: 'dsl@cc.com' },
-//   {
-//     nombre: 'Juan',
-//     apellido: 'López',
-//   }
-// )
-//   .then((u) => {
-//     console.log('usuario actualizado', u);
-//   })
-//   .catch((e) => {
-//     console.error('Error actualizando', e);
-//   });
+// const editarUsuario = async () => {
+//   await UserModel.findOneAndUpdate(
+//       { correo: 'dsl@cc.com' },
+//       {
+//         nombre: 'Juan',
+//         apellido: 'López',
+//       }
+//     )
+//     .then((u) => {
+//           console.log('usuario actualizado', u);
+//         })
+// }
 
-// ELIMINAR UN USUARIO
-// await UserModel.findOneAndDelete({ correo: 'dsl@cc.com' })
+// const eliminarUsuario = async () => {
+//   await UserModel.findOneAndDelete({ correo: 'dsl@cc.com' })
 //   .then((u) => {
 //     console.log('usuario eliminado: ', u);
 //   })
 //   .catch((e) => {
 //     console.error(e);
 //   });
+// }
+
+// const crearProyecto = async () =>{
+
+// }
+
