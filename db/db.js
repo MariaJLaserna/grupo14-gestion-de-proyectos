@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const conectarBD = async () => {
   return await mongoose
-    .connect('mongodb+srv://admin:AdminGrupo14@proyectogrupo14.m93zt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+    .connect(process.env.DATABASE_URL)
     .then(() => {
       console.log('Conexion exitosa');
     })
@@ -12,6 +12,10 @@ const conectarBD = async () => {
 };
 
 export default conectarBD;
+
+
+    //.connect('mongodb+srv://admin:AdminGrupo14@proyectogrupo14.m93zt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+
 
 // NOMBRE CLUSTER ProyectoGrupo14
 // Usuario Admin
