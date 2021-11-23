@@ -30,6 +30,10 @@ const userSchema = new Schema({
       message: 'El formato del correo electrónico está malo.',
     },
   },
+  password: {
+    type: String,
+    required: true,
+  },
   identificacion: {
     type: String,
     required: true,
@@ -75,7 +79,7 @@ foreignField: 'usuario',
 userSchema.virtual('proyectos', {
   ref: 'Proyecto',
   localField: '_id',
-  foreignField: 'proyecto',
+  foreignField: 'usuario',
   });
 
 const UserModel = model('User', userSchema);
