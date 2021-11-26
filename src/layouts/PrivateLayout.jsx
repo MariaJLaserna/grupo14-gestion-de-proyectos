@@ -33,7 +33,7 @@ const PrivateLayout = () => {
     }
   }, [dataMutation, setToken, loadingAuth, navigate]);
 
-  if (loadingMutation || loadingAuth) return <div>Loading...</div>;
+  if (loadingMutation || loadingAuth) return <div>Cargando...</div>;
 
   return (
     <div className='flex flex-col md:flex-row flex-no-wrap h-screen'>
