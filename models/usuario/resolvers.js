@@ -18,6 +18,22 @@ const resolversUsuario = {
       ]);
       return usuarios;
     },
+
+    UsuarioInfo: async(parent, args, context) => { //Nuevo. 26 de noviembre HU_03
+      const usuarioInfo = await UserModel.find();
+      if (args.rol==="ADMINISTRADOR") {   
+        return usuarioInfo;   
+      }
+      else {
+        return null;
+      }
+    },
+
+
+
+
+
+
     Usuario: async (parent, args) => {
       const usuario = await UserModel.findOne({ _id: args._id });
       return usuario;
@@ -42,7 +58,9 @@ const resolversUsuario = {
 
       return usuarioCreado;
     },
-    editarUsuario: async (parent, args) => {
+
+
+    editarUsuario: async (parent, args) => { //HU_05
       const usuarioEditado = await UserModel.findByIdAndUpdate(
         args._id,
         {
@@ -55,7 +73,13 @@ const resolversUsuario = {
         { new: true }
       );
 
-      return usuarioEditado;
+      if (args.rol==="ADMINISTRADOR") {   
+        return usuarioEditado;;   
+      }
+      else {
+        return null;
+      }
+      
     },
     eliminarUsuario: async (parent, args) => {
       if (Object.keys(args).includes('_id')) {

@@ -16,6 +16,7 @@ const tiposUsuario = gql`
   type Query {
     Usuarios: [Usuario]
     Usuario(_id: String!): Usuario
+    UsuarioInfo: [Usuario]
   }
   type Mutation {
     crearUsuario(

@@ -20,6 +20,7 @@ const tiposAvance = gql`
       descripcion: String!, 
       proyecto: String!, 
       creadoPor: String!): Avance
+    actualizarAvance: Avance
   }
 `;
 
