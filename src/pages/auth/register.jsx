@@ -15,20 +15,20 @@ const Register = () => {
   const navigate = useNavigate();
   const { form, formData, updateFormData } = useFormData();
 
-  const [registro, { data: dataMutation, loading: loadingMutation, error: errorMutation }] =
+  const [registro, { data: dataMutation
+   // , loading: loadingMutation, error: errorMutation
+   }] =
     useMutation(REGISTRO);
 
   const submitForm = (e) => {
     e.preventDefault();
-    console.log('enviar datos al backend', formData);
     registro({ variables: formData });
   };
 
   useEffect(() => {
-    console.log('data mutation', dataMutation);
     if (dataMutation) {
-      if (dataMutation.login.token) {
-        setToken(dataMutation.login.token);
+      if (dataMutation.registro.token) {
+        setToken(dataMutation.registro.token);
         navigate('/');
       }
     }
