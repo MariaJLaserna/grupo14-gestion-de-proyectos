@@ -13,6 +13,10 @@ const conectarBD = async () => {
 
 export default conectarBD;
 
+
+    //.connect('mongodb+srv://admin:AdminGrupo14@proyectogrupo14.m93zt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+
+
 // NOMBRE CLUSTER ProyectoGrupo14
 // Usuario Admin
 // Password AdminGrupo14

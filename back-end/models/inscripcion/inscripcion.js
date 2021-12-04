@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-// import { Enum_EstadoInscripcion } from './enums.js';
-import { ProjectModel } from './project.js';
-import { UserModel } from './user.js';
+// import { Enum_EstadoInscripcion } from '../enums/enums.js';
+import { ProjectModel } from '../proyecto/proyecto.js';
+import { UserModel } from '../usuario/usuario.js';
 
 const { Schema, model } = mongoose;
 // interface Inscription {

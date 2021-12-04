@@ -30,6 +30,10 @@ const userSchema = new Schema({
       message: 'El formato del correo electrónico está malo.',
     },
   },
+  password: {
+    type: String,
+    required: true,
+  },
   identificacion: {
     type: String,
     required: true,
@@ -53,6 +57,24 @@ const userSchema = new Schema({
     enum: ['PENDIENTE', 'AUTORIZADO', 'NO_AUTORIZADO'],
     default: 'PENDIENTE',
   },
+});
+
+userSchema.virtual('proyectosLiderados', {
+  ref: 'Proyecto',
+  localField: '_id',
+  foreignField: 'lider',
+});
+
+userSchema.virtual('avancesCreados', {
+  ref: 'Avance',
+  localField: '_id',
+  foreignField: 'creadoPor',
+});
+
+userSchema.virtual('inscripciones', {
+  ref: 'Inscripcion',
+  localField: '_id',
+  foreignField: 'estudiante',
 });
 
 const UserModel = model('User', userSchema);
