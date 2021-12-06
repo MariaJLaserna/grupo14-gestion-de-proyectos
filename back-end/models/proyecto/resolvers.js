@@ -12,6 +12,15 @@ const resolversProyecto = {
   //     return usr;
   //   },
   // },
+
+//   inscripciones: async (parent, args, context) => {
+//     const inscripciones = await InscriptionModel.find({
+//       proyecto: parent._id,
+//     });
+//     return inscripciones;
+//   },
+// },
+
   // Query: {
   //   Proyectos: async (parent, args, context) => {
   //     const proyectos = await ProjectModel.find();

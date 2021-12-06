@@ -25,14 +25,10 @@ const resolverInscripciones = {
     },
   },
 
-
-
-
-
   Mutation: {
     crearInscripcion: async (parent, args) => { //HU_020
       const inscripcionCreada = await InscriptionModel.create({
-        estado: args.estado,
+        //estado: args.estado, Daniel, lo sacó de los tipos y de los resolvers para trabajarlo desde el front
         proyecto: args.proyecto,
         estudiante: args.estudiante,
       });

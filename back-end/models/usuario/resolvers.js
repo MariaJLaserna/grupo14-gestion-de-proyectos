@@ -26,7 +26,7 @@ const resolversUsuario = {
       return usuarios;
     },
 
-    // Query: { ANIDADO, SIN USAR POPULATE
+    // Query: { ANIDADO, SIN USAR POPULATE Y QUE FILTRE LO QUE SE LE PASE EN LOS ARGUMENTOS, QUEDA GENÉRICO EL FILTRO
     //   Usuarios: async (parent, args, context) => {
     //     console.log(args);
     //     const usuarios = await UserModel.find({ ...args.filtro });
