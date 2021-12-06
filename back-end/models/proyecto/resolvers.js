@@ -3,7 +3,9 @@ import { ProjectModel } from './proyecto.js';
 const resolversProyecto = { 
   Query: {
     Proyectos: async (parent, args, context) => { //HU_06-HU_019
-      const proyectosAdmon = await ProjectModel.find();
+      const proyectosAdmon = await ProjectModel.find()
+      //.populate('lider')
+      ;
       if (args.rol==="ADMINISTRADOR" || args.rol === "ESTUDIANTE") {   
         return proyectosAdmon;   
       }

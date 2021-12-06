@@ -1,7 +1,14 @@
 import { UserModel } from './usuario.js';
 import bcrypt from 'bcrypt';
+import { InscriptionModel } from '../inscripcion/inscripcion.js';
 
 const resolversUsuario = {
+  // Usuario: {
+  //   inscripciones: async (parent, args, context) => {
+  //     return InscriptionModel.find({ estudiante: parent._id });
+  //   },
+  // },
+
   Query: {
     Usuarios: async (parent, args, context) => {
       const usuarios = await UserModel.find().populate([
@@ -18,6 +25,13 @@ const resolversUsuario = {
       ]);
       return usuarios;
     },
+
+    // Query: { ANIDADO, SIN USAR POPULATE
+    //   Usuarios: async (parent, args, context) => {
+    //     console.log(args);
+    //     const usuarios = await UserModel.find({ ...args.filtro });
+    //     return usuarios;
+    //   },
 
     UsuarioInfo: async(parent, args, context) => { //Nuevo. 26 de noviembre HU_03
       const usuarioInfo = await UserModel.find();
