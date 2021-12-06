@@ -1,5 +1,7 @@
 import { gql } from 'apollo-server-express';
 
+
+// Daniel cambia el de la línea 29 por : Usuarios(filtro: filtroUsuarios): [Usuario]
 const tiposUsuario = gql`
   type Usuario {
     _id: ID!
@@ -24,7 +26,7 @@ const tiposUsuario = gql`
 
   
   type Query {
-    Usuarios: [Usuario]
+    Usuarios: [Usuario]     
     Usuario(_id: String!): Usuario
     UsuarioInfo: [Usuario]
   }

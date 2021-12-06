@@ -1,5 +1,19 @@
 import { gql } from '@apollo/client';
 
+// const GET_USUARIOS = gql`
+//   query Query($filtro: FiltroUsuarios) { CON ESTE QUERY REEMPLAZARÍA EL DE LA LÍNEA 18, AGREGANDO EL FILTRO CREADO EN EL BACK
+//     Usuarios(filtro: $filtro) {
+//       _id
+//       nombre
+//       apellido
+//       correo
+//       estado
+//       identificacion
+//       rol
+//     }
+//   }
+// `;
+
 const GET_USUARIOS = gql`
   query Usuarios {
     Usuarios {
