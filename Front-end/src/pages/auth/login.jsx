@@ -13,9 +13,7 @@ const Login = () => {
   const { setToken } = useAuth();
   const { form, formData, updateFormData } = useFormData();
 
-  const [login, { data: dataMutation, loading: mutationLoading 
-   // , error: mutationError
-   }] =
+  const [login, { data: dataMutation, loading: mutationLoading, error: mutationError }] =
     useMutation(LOGIN);
 
   const submitForm = (e) => {
@@ -27,7 +25,6 @@ const Login = () => {
   };
 
   useEffect(() => {
-    console.log('data mutation', dataMutation);
     if (dataMutation) {
       if (dataMutation.login.token) {
         setToken(dataMutation.login.token);
