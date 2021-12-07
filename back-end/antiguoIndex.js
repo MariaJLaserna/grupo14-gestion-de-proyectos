@@ -1,11 +1,5 @@
 
-import conectarBD from './db/db.js';
-import { UserModel } from './models/user.js';
-// import { Enum_EstadoUsuario, Enum_Rol, Enum_TipoObjetivo } from './models/enums';
-import { ProjectModel } from './models/project.js';
-// import { ObjectId } from 'mongoose';
-import { ObjectiveModel } from './models/objective.js';
-//import { models } from 'mongoose';
+
 
 
 // METODOLOGÍA ONE TO MANY #1
@@ -102,36 +96,36 @@ const consultaProyectoConObjetivos2 = async () => {
 
 // METODOLOGIA ONE TO MANY #3
 
-const crearProyectoConObjetivos3 = async () => {
-  const usuarioInicial = await UserModel.create({
-    nombre: 'Usuario1',
-    apellido: 'Apellido Us1',
-    correo: 'usuario1@gmail.com',
-    identificacion: '1258',
-    rol: Enum_Rol.administrador,
-    estado: Enum_EstadoUsuario.autorizado,
-  });
+// const crearProyectoConObjetivos3 = async () => {
+//   const usuarioInicial = await UserModel.create({
+//     nombre: 'Usuario1',
+//     apellido: 'Apellido Us1',
+//     correo: 'usuario1@gmail.com',
+//     identificacion: '1258',
+//     rol: Enum_Rol.administrador,
+//     estado: Enum_EstadoUsuario.autorizado,
+//   });
 
-  const proyectoCreado = await ProjectModel.create({
-    nombre: 'Proyecto Grupo 14',
-    fechaInicio: new Date('2021/12/24'),
-    fechaFin: new Date('2022/12/24'),
-    presupuesto: 120000,
-    lider: usuarioInicial._id,
-    objetivos: [
-      { descripcion: 'Este es el objetivo general', tipo: Enum_TipoObjetivo.general },
-      { descripcion: 'Este es el objetivo especifico 1', tipo: Enum_TipoObjetivo.especifico },
-      { descripcion: 'Este es el objetivo especifico 2', tipo: Enum_TipoObjetivo.especifico },
-    ],
-  });
-};
-const consultaProyectoConObjetivos3 = async () => {
-  const proyectoCreado = await ProjectModel.find({ id: '618d5b22e4e2a99bddab693e' });
-  console.log('proyecto', proyectoCreado);
-};
+//   const proyectoCreado = await ProjectModel.create({
+//     nombre: 'Proyecto Grupo 14',
+//     fechaInicio: new Date('2021/12/24'),
+//     fechaFin: new Date('2022/12/24'),
+//     presupuesto: 120000,
+//     lider: usuarioInicial._id,
+//     objetivos: [
+//       { descripcion: 'Este es el objetivo general', tipo: Enum_TipoObjetivo.general },
+//       { descripcion: 'Este es el objetivo especifico 1', tipo: Enum_TipoObjetivo.especifico },
+//       { descripcion: 'Este es el objetivo especifico 2', tipo: Enum_TipoObjetivo.especifico },
+//     ],
+//   });
+// };
+// const consultaProyectoConObjetivos3 = async () => {
+//   const proyectoCreado = await ProjectModel.find({ id: '618d5b22e4e2a99bddab693e' });
+//   console.log('proyecto', proyectoCreado);
+// };
 
-const main = async () => {
-  await conectarBD();
+// const main = async () => {
+//   await conectarBD();
 //CREAR UN USUARIO
 // await UserModel.create({
 //   apellido: 'Perez',
@@ -169,18 +163,18 @@ const main = async () => {
     //       })
   
   
-  await UserModel.findOneAndDelete({ correo: 'pepitoperez@gmail.com' })
-  .then((u) => {
-    console.log('usuario eliminado: ', u);
-  })
-  .catch((e) => {
-    console.error(e);
-  });
-}
+//   await UserModel.findOneAndDelete({ correo: 'pepitoperez@gmail.com' })
+//   .then((u) => {
+//     console.log('usuario eliminado: ', u);
+//   })
+//   .catch((e) => {
+//     console.error(e);
+//   });
+// }
 
 
 
-main();
+// main();
 
 // const crearUsuario = async () =>{
 //   await UserModel.create({
