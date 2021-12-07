@@ -152,7 +152,7 @@ const InscripcionProyecto = ({ idProyecto, estado, inscripciones }) => {
   useEffect(() => {
     if (userData && inscripciones) {
       const flt = inscripciones.filter((el) => el.estudiante._id === userData._id);
-      if (flt.length > 0) {
+      if (flt.length > 0) { 
         setEstadoInscripcion(flt[0].estado);
       }
     }

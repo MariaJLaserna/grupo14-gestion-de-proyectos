@@ -6,8 +6,10 @@ const resolverInscripciones = {
   //   proyecto: async (parent, args, context) => {
   //     return await ProjectModel.findOne({ _id: parent.proyecto });
   //   },
+  //   estudiante: async (parent, args, context) => {
+  //     return await UserModel.findOne({ _id: parent.estudiante });
+  //   },
   // },
-    
  
   Query: { //HU_015
     Inscripciones: async (parent, args) => {

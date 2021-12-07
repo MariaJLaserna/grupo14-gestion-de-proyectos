@@ -13,10 +13,10 @@ const resolversProyecto = {
   //   },
   // },
 
-//   inscripciones: async (parent, args, context) => {
-//     const inscripciones = await InscriptionModel.find({
-//       proyecto: parent._id,
-//     });
+//    inscripciones: async (parent, args, context) => {
+//      const inscripciones = await InscriptionModel.find({
+//        proyecto: parent._id,
+//      });
 //     return inscripciones;
 //   },
 // },

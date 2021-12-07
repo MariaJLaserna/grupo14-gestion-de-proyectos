@@ -1,3 +1,4 @@
+
 import { gql } from '@apollo/client';
 
 const PROYECTOS = gql`
@@ -13,6 +14,12 @@ const PROYECTOS = gql`
       lider {
         _id
         correo
+      }
+      inscripciones {
+        estado
+        estudiante {
+          _id
+        }
       }
     }
   }
